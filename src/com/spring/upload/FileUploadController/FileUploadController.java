@@ -69,6 +69,10 @@ public class FileUploadController {
 						fileInfo.setFileName(fileName);
 						fileInfo.setFileSize(file.getSize()/(1024*1024));
 						headers.add("file Upload Succesfully", fileName);
+						/*IContainer container = IContainer.make();
+						int result = container.open(UPLOAD_LOCATION + file.getOriginalFilename(), IContainer.Type.READ, null);
+						long duration = container.getDuration();
+						logger.info("File Duration: "+duration);*/
 
 					} catch (IllegalArgumentException ex) {
 						System.out.println(ex.getMessage());
